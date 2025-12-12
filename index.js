@@ -89,6 +89,8 @@ formElement.addEventListener('submit', function(event) {
     const items = getTasksFromDOM();
     saveTasks(items);
     inputElement.value = '';
+  } else {
+    alert('Уважаемый пользователь, Вы, пытаетесь добавить пустую задачу!')
   }
 });
 
