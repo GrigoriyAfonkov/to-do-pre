@@ -82,16 +82,12 @@ formElement.addEventListener('submit', function(event) {
   event.preventDefault();
 
   const taskText = inputElement.value.trim();
+  const newItem = createItem(taskText);
+  listElement.prepend(newItem);
+  const items = getTasksFromDOM();
+  saveTasks(items);
+  inputElement.value = '';
 
-  if (taskText !== '') {
-    const newItem = createItem(taskText);
-    listElement.prepend(newItem);
-    const items = getTasksFromDOM();
-    saveTasks(items);
-    inputElement.value = '';
-  } else {
-    alert('Уважаемый пользователь, Вы, пытаетесь добавить пустую задачу!')
-  }
 });
 
 // Инициализация приложения
