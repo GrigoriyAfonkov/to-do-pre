@@ -87,13 +87,12 @@ formElement.addEventListener('submit', function(event) {
   const items = getTasksFromDOM();
   saveTasks(items);
   inputElement.value = '';
-
 });
 
 // Инициализация приложения
-items = loadTasks();
-items.forEach(function(item) {
+
+let currentTasks = loadTasks();
+currentTasks.forEach(function(item) {
     const itemElement = createItem(item);
     listElement.append(itemElement);
 });
-
